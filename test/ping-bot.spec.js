@@ -24,6 +24,7 @@ describe('ping-bot', function() {
   before(function() {
     // runs before all tests in this block
     process.env.FREQ = '*/5';
+    herokuApps = require('./data/heroku-apps');
   });
 
   after(function() {
@@ -46,7 +47,6 @@ describe('ping-bot', function() {
 
   it('should instantiate', function() {
     // Given
-    herokuApps = require('./data/heroku-apps');
 
     // When
     let bot = new PingBot(herokuApps);
@@ -75,7 +75,6 @@ describe('ping-bot', function() {
   it('should leave sleeping apps alone', function() {
     // Given
     setTime(2);
-
 
     for (let app of herokuApps) {
       app.wakeUpTime = 7;
