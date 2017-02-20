@@ -5,26 +5,21 @@ chai.should();
 
 let sinon = require('sinon');
 
-let db = require('../lib/db');
+let Database = require('../lib/ping-bot/db');
 let GoogleSpreadsheetMock = require('./data/google-spreadsheet').GoogleSpreadsheet;
 
 process.env.silent = true;
 
 describe('db', function() {
 
+  let db;
   let stub;
   let getDocStub;
 
-  before(function() {
-    // runs before all tests in this block
-  });
-
-  after(function() {
-    // runs after all tests in this block
-  });
-
   beforeEach(function() {
     // runs before each test in this block
+    db = new Database('test-key');
+
     getDocStub = sinon.stub(db, "getDoc", () => {
       return new GoogleSpreadsheetMock();
     });
@@ -58,7 +53,7 @@ describe('db', function() {
     // Given
 
     // When
-    db.getApps().then((apps) => {
+    db.queryApps().then((apps) => {
       // Then
       apps.length.should.equal(2);
 

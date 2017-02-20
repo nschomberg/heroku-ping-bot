@@ -4,14 +4,13 @@ let express = require('express');
 let app = express();
 
 let PingBot = require('./lib/ping-bot');
-let db = require('./lib/db');
+let db = require('./lib/ping-bot/db');
 
 
-db.getApps()
-	.then((apps) => {
-		return new PingBot(apps);
-	})
-	.then((bot) => {
+let bot = new PingBot();
+
+bot.init()
+	.then(() => {
 		app.set('port', (process.env.PORT || 5000));
 
 		app.use(express.static(__dirname + '/public'));

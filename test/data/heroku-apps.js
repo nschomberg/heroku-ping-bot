@@ -1,6 +1,6 @@
 'use strict';
 
-let HerokuApp = require('../../lib/db/models/heroku-app');
+let HerokuApp = require('../../lib/ping-bot/db/models/heroku-app');
 
 let appRows = require('./app-rows');
 
