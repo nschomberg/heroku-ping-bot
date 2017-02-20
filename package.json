@@ -7,7 +7,8 @@
 	},
 	"main": "index.js",
 	"scripts": {
-		"start": "nf start"
+		"start": "nf start",
+		"test": "mocha"
 	},
 	"dependencies": {
 		"ejs": "2.4.1",
