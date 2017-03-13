@@ -1,7 +1,6 @@
 'use strict';
 
-let appRows = [
-  {
+let appRows = [{
     domain: 'bot-1',
     wakeuptime: '0',
   },

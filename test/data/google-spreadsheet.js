@@ -1,5 +1,7 @@
 'use strict';
 
+let appRows = require('./app-rows');
+
 let GoogleSpreadsheet = class GoogleSpreadsheet {
   constructor(sheetKey) {
     this.sheetKey = sheetKey;
@@ -18,25 +20,19 @@ class Info {
   constructor() {}
 
   get worksheets() {
-    return [ new Worksheet() ];
+    return [new Worksheet()];
   }
 }
 
 class Worksheet {
-  constructor() {}
+  constructor() {
+    this.title = 'test-worksheet';
+    this.id = 'worksheet-1234';
+  }
 
   getRows(options, callback) {
     let err;
-    let rows = [
-      {
-        domain: 'spoof-org',
-        wakeuptime: '7',
-      },
-      {
-        domain: 'doof-org',
-        wakeuptime: '4',
-      },
-    ];
+    let rows = appRows;
 
     callback(err, rows);
   }
