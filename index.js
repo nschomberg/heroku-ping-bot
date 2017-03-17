@@ -4,8 +4,6 @@ let express = require('express');
 let app = express();
 
 let PingBot = require('./lib/ping-bot');
-let db = require('./lib/ping-bot/db');
-
 
 let bot = new PingBot();
 
