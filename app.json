@@ -1,8 +1,8 @@
 {
-	"name": "ping-bot",
-	"description": "",
-	"repository": "",
-	"logo": "",
-	"keywords": [],
-	"image": "heroku/nodejs"
+  "name": "ping-bot",
+  "description": "",
+  "repository": "",
+  "logo": "",
+  "keywords": [],
+  "image": "heroku/nodejs"
 }
