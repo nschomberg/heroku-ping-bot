@@ -5,6 +5,7 @@ let app = express();
 
 let PingBot = require('./lib/ping-bot');
 
+
 let bot = new PingBot();
 
 bot.init()

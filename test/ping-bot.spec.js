@@ -8,10 +8,10 @@ chai.should();
 let sinon = require('sinon');
 
 let PingBot = require('../lib/ping-bot');
+
 let appSpreadsheet = require('./data/app-spreadsheet');
 
 describe('ping-bot', function() {
-
   let clock;
   let spy;
   let requestStub;
@@ -19,6 +19,7 @@ describe('ping-bot', function() {
   let db;
   let bot;
   let getDocStub;
+
 
   let requestMock = {
     get: (endpoint) => {},
@@ -34,7 +35,6 @@ describe('ping-bot', function() {
     // runs after each test in this block
     getDocStub.restore();
   });
-
 
   function setTime(hour) {
     let now = new Date();
@@ -73,8 +73,6 @@ describe('ping-bot', function() {
         requestStub.restore();
         done();
       });
-
-
   });
 
   it('should schedule apps', function(done) {
@@ -118,6 +116,5 @@ describe('ping-bot', function() {
     requestStub.restore();
     spy.restore();
     done();
-
   });
 });
